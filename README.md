@@ -51,12 +51,12 @@ Paste the following in your JavaScript console:
   
 Then, to run the code, paste these lines in your console:
   
-  /** To run the loops **/
-  var cookieClickLoop = setInterval(doCookieClick, 1);
-  var purchaseClickLoop = setInterval(doPurchaseClick, 1000);
+      /** To run the loops **/
+      var cookieClickLoop = setInterval(doCookieClick, 1);
+      var purchaseClickLoop = setInterval(doPurchaseClick, 1000);
   
 To stop the loops, paste these lines in your console:
 
-  /** To stop the loops **/
-  clearInterval(cookieClickLoop);
-  clearInterval(purchaseClickLoop);
+      /** To stop the loops **/
+      clearInterval(cookieClickLoop);
+      clearInterval(purchaseClickLoop);
