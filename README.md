@@ -6,48 +6,48 @@ I have no idea why I've just done this. A friend said "wouldn't it be awesome if
 
 Paste the following in your JavaScript console:
 
-  function doPurchaseClick() 
-  {
-  	var numCookies = parseFloat(document.querySelector('#cookies.title').innerHTML.match(/[0-9]+,[0-9]+|[0-9]+ cookies|[0-9]+.[0-9]+ million/g)[0].replace('cookies', '').replace('million', ''))
-  	var isMillion = (document.querySelector('#cookies.title').innerHTML.match(/[0-9]+ million/g) != false);
-  
-  	/** 1.4 million needs to be come 1400000 (remove full stop, add 5 "0"s then parse to float **/
-  	if (isMillion != false) {
-  		numCookies = parseInt(numCookies + "00000");
-  	}
-  	
-  	/** All the enabled purchases **/
-  	var enabledPurchases = document.querySelectorAll('.product.unlocked.enabled');
-  	
-  	/** Store all the purchase costs in an array **/
-  	var costs = [];
-  	
-  	for (var i = 0; i < enabledPurchases.length; i++) {
-  		var cost = parseFloat(document.querySelectorAll('.product.unlocked.enabled > div.content > span.price')[i].innerHTML.replace(/,/, ''))
-  		costs.push(cost);
-  	}
-  	
-  	/** Get the lowest cost purchase key so we know which of the enabled purchases is the one to buy **/
-  	var lowestCost = Math.min.apply(Math, costs);
-  	
-  	var lowestPurchaseKey = 0;
-  	
-  	for (var x = 0; x < costs.length; x++) {
-  		if (costs[x] == lowestCost) {
-  			lowestPurchaseKey = x;
-  		}
-  	}
-  	
-  	var purchaseToClick = enabledPurchases[lowestPurchaseKey];
-  	
-  	if (purchaseToClick) {
-  		purchaseToClick.click();
-  	}
-  }
-  
-  function doCookieClick() {
-  	document.querySelector('div#bigCookie').click();
-  }
+    function doPurchaseClick() 
+    {
+    	var numCookies = parseFloat(document.querySelector('#cookies.title').innerHTML.match(/[0-9]+,[0-9]+|[0-9]+ cookies|[0-9]+.[0-9]+ million/g)[0].replace('cookies', '').replace('million', ''))
+    	var isMillion = (document.querySelector('#cookies.title').innerHTML.match(/[0-9]+ million/g) != false);
+    
+    	/** 1.4 million needs to be come 1400000 (remove full stop, add 5 "0"s then parse to float **/
+    	if (isMillion != false) {
+    		numCookies = parseInt(numCookies + "00000");
+    	}
+    	
+    	/** All the enabled purchases **/
+    	var enabledPurchases = document.querySelectorAll('.product.unlocked.enabled');
+    	
+    	/** Store all the purchase costs in an array **/
+    	var costs = [];
+    	
+    	for (var i = 0; i < enabledPurchases.length; i++) {
+    		var cost = parseFloat(document.querySelectorAll('.product.unlocked.enabled > div.content > span.price')[i].innerHTML.replace(/,/, ''))
+    		costs.push(cost);
+    	}
+    	
+    	/** Get the lowest cost purchase key so we know which of the enabled purchases is the one to buy **/
+    	var lowestCost = Math.min.apply(Math, costs);
+    	
+    	var lowestPurchaseKey = 0;
+    	
+    	for (var x = 0; x < costs.length; x++) {
+    		if (costs[x] == lowestCost) {
+    			lowestPurchaseKey = x;
+    		}
+    	}
+    	
+    	var purchaseToClick = enabledPurchases[lowestPurchaseKey];
+    	
+    	if (purchaseToClick) {
+    		purchaseToClick.click();
+    	}
+    }
+    
+    function doCookieClick() {
+    	document.querySelector('div#bigCookie').click();
+    }
   
 Then, to run the code, paste these lines in your console:
   
