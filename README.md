@@ -1,5 +1,5 @@
 # cookie-clicker-automator
-I have no idea why I've just done this. A friend said "wouldn't it be awesome if we could automate the new cookie clicker", cue me wasting an hour on a Saturday evening building this that does the following:
+I have no idea why I've just done this. A friend said "wouldn't it be awesome if we could automate the [new cookie clicker](http://orteil.dashnet.org/cookieclicker/)", cue me wasting an hour on a Saturday evening building this that does the following:
 
 - Automatically click the cookie every 1 millisecond
 - Automatically purchase the lowest costing purchase every 2 seconds
